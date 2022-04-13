@@ -95,7 +95,6 @@ async function safari () {
     browserChoice = `safari`;
 }
 
-
 async function allBrowsers () {
     browserChoice = [
         `brave browser`,
@@ -125,6 +124,7 @@ exports.build = series(
     validateCSS,
     compressHTML,
     compressCSS,
+    validateJS,
     transpileJSForProd
 );
 exports.brave = series(brave, serve);
