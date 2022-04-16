@@ -53,3 +53,5 @@ window.onload = () => {
     }        
     else{
         alert(`Please input an integer not string`);
+    }
+};
