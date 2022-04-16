@@ -1,3 +1,17 @@
 h1 {
   text-align: center;
 }
+
+table {
+  border-collapse: collapse;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}

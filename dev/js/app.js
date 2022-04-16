@@ -4,8 +4,8 @@ window.onload = () => {
         
         let elements = new Array(user_input);
 
-        document.write(`<b>Original Matrix</b> <br><br>`);
-    
+        const originalMatrix = document.getElementById(`originalMatrix`);
+
         for (let i = 0; i < elements.length; i++) {
             elements[i] = new Array(user_input);
         }
@@ -19,13 +19,17 @@ window.onload = () => {
         }
         
         for (let i = 0; i < elements.length; i++) {
+            const newRow1 = document.createElement(`tr`);
             for (let j = 0; j < elements.length; j++) {
-                document.write(elements[i][j] + ` `);
+                console.log(i, j, elements[i][j]);
+                const newCell1 = document.createElement(`td`);
+                newCell1.innerHTML = elements[i][j];
+                newRow1.appendChild(newCell1);
             }
-            document.write(`<br>`);
+            originalMatrix.appendChild(newRow1);
         }
-          
-        document.write(`<br><b> Flipped Matrix: </b><br><br>`);
+
+        const flippedMatrix = document.getElementById(`flippedMatrix`);
 
         let i = 0, j = user_input;
         let temp = 0;
@@ -37,14 +41,15 @@ window.onload = () => {
             j--;
         }
 
-
         for (i = 0; i < user_input; ++i) {
-            for (j = 0; j < user_input; ++j)
-                document.write(elements[i][j] + ` `);
-            document.write(`<br>`);
+            const newRow2 = document.createElement(`tr`);
+            for (j = 0; j < user_input; ++j) {
+                const newCell2 = document.createElement(`td`);
+                newCell2.innerHTML = elements[i][j] ;
+                newRow2.appendChild(newCell2);
+            }
+            flippedMatrix.appendChild(newRow2);
         }
     }        
     else{
         alert(`Please input an integer not string`);
-    }
-};
